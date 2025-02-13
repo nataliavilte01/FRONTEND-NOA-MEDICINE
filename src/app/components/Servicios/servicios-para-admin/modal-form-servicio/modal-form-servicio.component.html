@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Nuevo Servicio</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="upload-container">
+        <input type="file" id="fileInput" hidden>
+        <button mat-raised-button color="primary" >
+          <mat-icon>cloud_upload</mat-icon> Subir Imagen
+        </button>
+        <div *ngIf="selectedFile">
+          <p>Archivo seleccionado: {{ selectedFile.name }}</p>
+        </div>
+      </div>
+      
+      <form class="example-form">
+    <div class="row">
+        <div class="col-5">
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Ex. Pizza">
+            </mat-form-field>
+        </div>
+        <div class="col-5">
+            <mat-form-field class="example-full-width">
+                <mat-label>Descripcion</mat-label>
+                <input matInput placeholder="Descripcion">
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field class="example-full-width">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="Ex. Pizza">
+            </mat-form-field>
+        </div>
+        <mat-form-field class="example-full -width">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput placeholder="Ingrese descripción"></textarea>
+          </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>
