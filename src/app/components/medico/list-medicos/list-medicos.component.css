@@ -1,0 +1,45 @@
+.container-medicos {
+  margin-top: 95px;
+  margin-bottom: 20px;
+}
+
+h1{
+  text-align:center;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  font-family:"Roboto", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #002a6c;
+}
+table{
+  width: 100%;
+  background-color: #e4f4fd;
+  margin-bottom: 5vh;
+}
+
+.button-delete{
+  margin-left: 15px;
+}
+.button-register{
+  margin-bottom: 3vh;
+}
+/*FALTA TERMINA*/
+@media (max-width: 1200px) {
+  .mat-column-direccion{
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .mat-column-fecha_nac{
+    display: none;
+  }
+}
+@media (max-width: 790px) {
+  .mat-column-telefono{
+    display: none;
+  }
+  .mat-column-dni{
+    display: none;
+  }
+}
