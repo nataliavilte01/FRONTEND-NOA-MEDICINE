@@ -1,0 +1,71 @@
+<!-- <h2 mat-dialog-title>Modificar datos de Medico</h2> -->
+<h2 mat-dialog-title class="titulo-model">Modificar datos de Medico</h2>
+<mat-dialog-content>
+  <form class="medico-form">
+    <div class="row">
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="nombre">Nombre</mat-label>
+          <input matInput placeholder="Nombre" [(ngModel)]="medico.nombre" name="nombre">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="apellido">Apellido</mat-label>
+          <input matInput placeholder="apellido" [(ngModel)]="medico.apellido" name="apelido">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="dni">DNI:</mat-label>
+          <input matInput placeholder="dni" [(ngModel)]="medico.dni" name="dni">
+        </mat-form-field>
+      </div>
+      <!-- fecha -->
+      <div class="col-5">
+        <mat-form-field>
+          <mat-label name="fecha_nac">Fecha de nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="medico.fecha_nac" name="fecha_nac">
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="email">Email :</mat-label>
+          <input matInput placeholder="Email" [(ngModel)]="medico.email" name="email">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="telefono">Telefono :</mat-label>
+          <input matInput placeholder="Telefono" [(ngModel)]="medico.telefono" name="telefono">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="direccion">Direccion :</mat-label>
+          <input matInput placeholder="Direccion" [(ngModel)]="medico.direccion" name="direccion">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="especialidad_medica">Especialidad Medica :</mat-label>
+          <input matInput placeholder="Esp. Medica" [(ngModel)]="medico.especialidad_medica" name="especialidad_medica">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width">
+          <mat-label name="sueldo">Sueldo :</mat-label>
+          <input matInput placeholder="Sueldo" [(ngModel)]="medico.sueldo" name="sueldo">
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button *ngIf="data._id==='0'" (click)="createMedico(medico)">Registrar</button>
+  <button mat-button *ngIf="data._id!=='0'" (click)="updateMedico(medico)">Actualizar</button>
+</mat-dialog-actions>

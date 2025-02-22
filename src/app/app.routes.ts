@@ -6,4 +6,7 @@ import { ListaServiciosParaClienteComponent } from './components/Servicios/lista
 export const routes: Routes = [
 //  { path: '', component: ListaServiciosParaClienteComponent },
 // {path:'',loadChildren:()=>import('./components/Servicios/servicios-para-admin/lista-servicios-para-admin/servicios-routing.module').then(m => m.ServiciosRoutingModule)}
+  //PARTE DE NATALIA
+  {path: 'list-medicos', loadComponent: ()=> import ('./components/medico/list-medicos/list-medicos.component').then( m=> m.ListMedicosComponent) },
+  {path: 'form-medico', loadComponent: ()=>import ('./components/medico/form-medico/form-medico.component').then (m=>m.FormMedicoComponent)}
 ];
