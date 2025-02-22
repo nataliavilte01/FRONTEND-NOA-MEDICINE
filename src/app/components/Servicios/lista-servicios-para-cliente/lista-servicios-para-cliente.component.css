@@ -1,9 +1,28 @@
 .container-fluid{
     height: auto;
     padding-top: 90px;
+    padding-bottom: 10px;
 }
 
 .container-row{
     padding-left: 4%;
     padding-right: 4%;
+
 }
+
+.container-card{
+    padding: 3px;
+}
+
+.example-card {
+    overflow: hidden;
+  }
+  
+.example-card img {
+    transition: transform 0.6s ease-in-out;
+  }
+  
+.example-card img:hover {
+    transform: scale(1.1); /* Ajusta la escala según prefieras */
+  }
+  

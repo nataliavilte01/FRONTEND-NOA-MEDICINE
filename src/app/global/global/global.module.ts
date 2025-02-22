@@ -44,7 +44,8 @@ import {MatCalendarCellClassFunction, MatDatepickerModule} from '@angular/materi
     MatProgressBarModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ]
 })
 export class GlobalModule { }

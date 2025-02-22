@@ -46,7 +46,8 @@ export class ListaServiciosParaAdminComponent implements OnInit {
   cargarServicio(){
     const criteria ={
       next:(res:any)=>{
-       this.dataSource.data=res.data;
+        this.dataSource.data=res.data;
+        console.log(this.dataSource.data)
       },
       err:(error:Error)=>{
         console.log(error);

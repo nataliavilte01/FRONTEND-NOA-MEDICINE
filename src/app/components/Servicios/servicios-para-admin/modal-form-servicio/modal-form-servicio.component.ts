@@ -26,6 +26,7 @@ export class ModalFormServicioComponent implements OnInit {
   servicio:ServicioModule;
   especialidades:Array<EspecialidadModule>;
   imagenRoute:string="vacio";
+  titleForm:string="Nuevo Servicio";
 
   modificar:boolean=false;
 
@@ -44,6 +45,7 @@ export class ModalFormServicioComponent implements OnInit {
     if(this.data!=null){
       this.reloadForm(this.data);
       this.modificar=true;
+      this.titleForm="Modificar Servicio"
     }
     this.loadEspecialidades()
   }
@@ -104,6 +106,7 @@ export class ModalFormServicioComponent implements OnInit {
      }
      
      if(this.modificar==true){
+        this.servicio._id=this.data._id
         this.servicioService.putServicio(servicio,this.selectedFile).subscribe(criteria)
      }else{ 
       this.servicioService.postServicio(servicio,this.selectedFile).subscribe(criteria);

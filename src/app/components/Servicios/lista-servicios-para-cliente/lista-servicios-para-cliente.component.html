@@ -1,13 +1,14 @@
 <div class="container-fluid">
     <div class="container-row">
        <div class="row">
-       <div *ngFor="let servicio of servicios" class="col-lg-3 col-md-4 col-sm-6 col-12" >
+       <div *ngFor="let servicio of servicios" class="container-card col-lg-3 col-md-4 col-sm-6 col-12" >
         <mat-card class="example-card" appearance="outlined">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>{{servicio.nombre}}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image [src]="servicio.image" alt="img">
+            <img *ngIf="servicio.image !=''" mat-card-image [src]="servicio.image" alt="img">
+            <img *ngIf="servicio.image==''"  mat-card-image src="./assets/sin-imagen.jpg" alt="img">
             <mat-card-content>
                 <h4>descripcion</h4>
             </mat-card-content>

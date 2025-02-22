@@ -24,6 +24,7 @@ export class ListaServiciosParaClienteComponent implements OnInit {
   cargarServicio(){
     const criteria ={
       next:(res:any)=>{
+        console.log(res)
        this.servicios=res.data;
       },
       err:(error:Error)=>{

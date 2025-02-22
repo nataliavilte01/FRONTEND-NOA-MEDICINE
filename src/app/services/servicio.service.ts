@@ -34,6 +34,7 @@ export class ServicioService {
 
   postServicio(servicio:ServicioModule,imagenFile:File | null):Observable<any>{
     const formData:FormData = new FormData();
+    formData.append('image',"");
     if(imagenFile!=null)
          formData.append('image', imagenFile);
     formData.append('nombre', servicio.nombre);
@@ -52,8 +53,9 @@ export class ServicioService {
     formData.append('precio', servicio.precio.toString());
     formData.append('descripcion', servicio.descripcion);
     formData.append('especialidad', servicio.especialidad);
+    formData.append('_id',servicio._id)
 
-    return this.http.put<FormData>(this.URI+servicio._id,formData);
+    return this.http.put<FormData>(this.URI,formData);
   }
 
 
