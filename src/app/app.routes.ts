@@ -4,6 +4,6 @@ import { ListaServiciosParaClienteComponent } from './components/Servicios/lista
 //import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
- // { path: '', component: HomeComponent },
-  {path:'',loadChildren:()=>import('./components/Servicios/servicios-para-admin/lista-servicios-para-admin/servicios.module').then(m => m.ServiciosModule)}
+//  { path: '', component: ListaServiciosParaClienteComponent },
+// {path:'',loadChildren:()=>import('./components/Servicios/servicios-para-admin/lista-servicios-para-admin/servicios-routing.module').then(m => m.ServiciosRoutingModule)}
 ];

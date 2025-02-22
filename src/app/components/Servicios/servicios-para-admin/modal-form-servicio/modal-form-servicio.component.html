@@ -1,43 +1,61 @@
 <h2 mat-dialog-title>Nuevo Servicio</h2>
 <mat-dialog-content class="mat-typography">
-    <div class="upload-container">
-        <input type="file" id="fileInput" hidden>
-        <button mat-raised-button color="primary" >
-          <mat-icon>cloud_upload</mat-icon> Subir Imagen
-        </button>
-        <div *ngIf="selectedFile">
-          <p>Archivo seleccionado: {{ selectedFile.name }}</p>
-        </div>
-      </div>
-      
-      <form class="example-form">
-    <div class="row">
-        <div class="col-5">
-            <mat-form-field class="example-full-width">
-                <mat-label>Nombre</mat-label>
-                <input matInput placeholder="Ex. Pizza">
-            </mat-form-field>
-        </div>
-        <div class="col-5">
-            <mat-form-field class="example-full-width">
-                <mat-label>Descripcion</mat-label>
-                <input matInput placeholder="Descripcion">
-            </mat-form-field>
-        </div>
-        <div class="col-4">
-            <mat-form-field class="example-full-width">
-                <mat-label>Precio</mat-label>
-                <input matInput placeholder="Ex. Pizza">
-            </mat-form-field>
-        </div>
-        <mat-form-field class="example-full -width">
-            <mat-label>Descripción</mat-label>
-            <textarea matInput placeholder="Ingrese descripción"></textarea>
-          </mat-form-field>
+<div class="row row_file">
+
+  
+  <div class="upload-container col-md-5 col-12">
+    <input type="file" class="fileInput" #fileInput (change)="capturarFile($event)" hidden>
+    <button mat-raised-button color="primary" (click)="fileInput.click()">
+      <mat-icon>cloud_upload</mat-icon> Subir Imagen
+    </button>
+    <div *ngIf="selectedFile">
+      <p>Archivo seleccionado: {{ selectedFile.name }}</p>
     </div>
+  </div>  
+
+  <div class=" col-md-5 col-12" *ngIf="imagenRoute=='vacio'">
+    <img class="offset-md-3 offset-2 col-9" [src]="previsualizacion" alt="">
+  </div>
+
+  <div class=" col-md-5 col-12" *ngIf="imagenRoute!='vacio'">
+    <img class="offset-md-3 offset-2 col-9" [src]="imagenRoute" alt="">
+  </div>
+
+</div>
+      
+  <form [formGroup]="formGroup" class="example-form">
+        <div class="row">
+          <div class="col-5">
+              <mat-form-field class="example-full-width">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput formControlName="nombre" placeholder="Ingrese nombre">
+              </mat-form-field>
+          </div>
+          <div class="col-5">
+            <mat-form-field>
+              <mat-label>Precio</mat-label>
+              <input matInput formControlName="precio" placeholder="Ingrese Precio" type="number">
+            </mat-form-field>
+          </div>
+            
+              <mat-form-field>
+                <mat-label>Especialidad</mat-label>
+                <mat-select  formControlName="especialidad">
+                  <mat-option *ngFor="let especialidad of especialidades" [value]="especialidad._id">
+                    {{especialidad.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        
+
+           <mat-form-field class="example-full -width">
+              <mat-label>Descripción</mat-label>
+              <textarea matInput formControlName="descripcion" placeholder="Ingrese descripción"></textarea>
+            </mat-form-field>
+      </div>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button cdkFocusInitial>Guardar</button>
+  <button mat-button cdkFocusInitial (click)="cargarServicio()">Guardar</button>
 </mat-dialog-actions>

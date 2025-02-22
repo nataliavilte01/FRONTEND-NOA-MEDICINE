@@ -18,7 +18,12 @@ table{
     background-color: rgb(139, 180, 180);
 }
 
-
+/* En styles.css o en el archivo de estilos del componente */
+.red-snackbar {
+    background-color: red !important;
+    color: white;
+  }
+  
 
 @media screen and (max-width:1200px) {
     .container-items{

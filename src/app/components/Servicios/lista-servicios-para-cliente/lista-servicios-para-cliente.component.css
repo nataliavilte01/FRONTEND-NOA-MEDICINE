@@ -1,0 +1,9 @@
+.container-fluid{
+    height: auto;
+    padding-top: 90px;
+}
+
+.container-row{
+    padding-left: 4%;
+    padding-right: 4%;
+}
