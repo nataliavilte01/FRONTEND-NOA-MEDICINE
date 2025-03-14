@@ -1,0 +1,14 @@
+.container-fluid{
+    padding-top: 90px;
+    padding-bottom: 10px;
+    height: 100%;
+}
+
+.card-header{
+    justify-content: center;
+}
+
+.tittle{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}

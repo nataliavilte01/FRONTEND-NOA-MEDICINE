@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="container-items">
+        <button mat-flat-button (click)="openDialog(null)" >Nuevo Paquete</button>
+        <div class="container-table">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-3">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="nombre">
+                  <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="descripcion">
+                  <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                  <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="precio">
+                  <th mat-header-cell *matHeaderCellDef> Precio </th>
+                  <td mat-cell *matCellDef="let element"> {{element.precio | currency}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="opciones">
+                  <th mat-header-cell *matHeaderCellDef>Opciones</th>
+                  <td mat-cell *matCellDef="let element"> 
+                    <button mat-icon-button color="warn" (click)="eliminarPaquete(element._id)"><mat-icon>delete</mat-icon></button>
+                   </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="row-table" (click)="openDialog(row)" ></tr>
+
+              </table>
+              
+              
+        </div>
+    </div>
+</div>

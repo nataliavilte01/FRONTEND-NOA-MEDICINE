@@ -78,7 +78,7 @@ export class ListaServiciosParaAdminComponent implements OnInit {
       },
       error:(err:Error)=>{
           console.log(err.message);
-          this.openSnackBar("error a eliminar servicio");
+          this.openSnackBar("Error a eliminar servicio");
           this.cargarServicio();
         }
     }
@@ -89,7 +89,7 @@ export class ListaServiciosParaAdminComponent implements OnInit {
   }
 
   openSnackBar(smg:string){
-    this._snackBar.open('Eliminado', 'Undo', {
+    this._snackBar.open(smg, 'Undo', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
       duration: 3000,
