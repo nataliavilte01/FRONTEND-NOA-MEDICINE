@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="container-row">
+        <div class="row">
+            <div *ngFor="let paquete of paquetes" class="container-card col-lg-3 col-md-4 col-sm-6 col-12" >
+                <mat-card class="example-card" appearance="outlined">
+                    <mat-card-header class="card-header">
+                      <mat-card-title class="tittle">{{paquete.nombre}}</mat-card-title>
+                    </mat-card-header>
+                   <!-- <img *ngIf="servicio.image !=''" mat-card-image [src]="paquete.image" alt="img">
+                    <img *ngIf="servicio.image==''"  mat-card-image src="./assets/sin-imagen.jpg" alt="img">-->
+                    <mat-card-content>
+                        <h4>descripcion</h4>
+                        <p>{{paquete.descripcion}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button>Conseguir Paquete</button>
+                    </mat-card-actions>
+                  </mat-card>
+               </div>
+        </div>
+    </div>
+</div>
